@@ -17,7 +17,7 @@ const search = (event) => {
   document.querySelector('.displayContent').innerHTML = ""
   const research = document.searchForm.searchBar.value;
   const splitResearch = research.split(' ').join('+');
-  fetch(`http://www.omdbapi.com/?s=${splitResearch}&apikey=e7fdb520`)
+  fetch(`https://www.omdbapi.com/?s=${splitResearch}&apikey=e7fdb520`)
     .then((response) => response.json())
     .then((data) => {
       data.Search.forEach((item) => {
@@ -48,7 +48,7 @@ const search = (event) => {
 };
 
 const moovieResume = (id) => {
-  fetch(`http://www.omdbapi.com/?i=${id}&apikey=e7fdb520`)
+  fetch(`https://www.omdbapi.com/?i=${id}&apikey=e7fdb520`)
     .then((response) => response.json())
     .then((data) => {
       const resum = data.Plot
