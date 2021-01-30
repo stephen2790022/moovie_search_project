@@ -1,12 +1,12 @@
 const displayContent = document.querySelector('.displayContent')
 const displayMoovie = (moovieImage, moovieName, moovieDate, id) => {
   displayContent.innerHTML += `
-    <div class="card m-4 cardEffect" style="width: 18rem;">
-      <img style="height: 17rem;" src="${moovieImage}" alt="Card image cap">
+    <div class="card  cardEffect" ;">
+      <img src="${moovieImage}" alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">Name: ${moovieName}</h5>
+        <h4 class="card-title">Name: ${moovieName}</h5>
         <p>Date: ${moovieDate}</p>
-        <button class="btn btn-primary" onclick="moovieResume('${id}')">Read more</button>
+        
       </div>
     </div>
   `
@@ -15,7 +15,8 @@ const displayMoovie = (moovieImage, moovieName, moovieDate, id) => {
 const search = (event) => {
   event.preventDefault();
   document.querySelector('.displayContent').innerHTML = ""
-  const research = document.searchForm.searchBar.value;
+  const research = document.querySelector('form #searchBar').value;
+  console.log(research)
   const splitResearch = research.split(' ').join('+');
   fetch(`https://www.omdbapi.com/?s=${splitResearch}&apikey=e7fdb520`)
     .then((response) => response.json())
