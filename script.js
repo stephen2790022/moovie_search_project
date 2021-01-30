@@ -4,9 +4,8 @@ const displayMoovie = (moovieImage, moovieName, moovieDate, id) => {
     <div class="card  cardEffect" ;">
       <img src="${moovieImage}" alt="Card image cap">
       <div class="card-body">
-        <h4 class="card-title">Name: ${moovieName}</h5>
+        <h4 class="card-title">Name: ${moovieName}</h4>
         <p>Date: ${moovieDate}</p>
-        
       </div>
     </div>
   `
